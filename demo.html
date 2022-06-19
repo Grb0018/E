@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body id="body">
+    <button onclick="openFullscreen()"> press</button>
+    <p id="d1">.</p>
+    <p id="d2">.</p>
+    <p id="d3">.</p>
+    <p id="d4">.</p>
+    <p id="d5">.</p>
+    <p id="d6">.</p>
+    <p id="d7">.</p>
+    <p id="d8">.</p>
+
+    <a id="a1">.</a>
+    <a id="a2">.</a>
+    <a id="a3">.</a>
+    <a id="a4">.</a>
+    <a id="a5">.</a>
+    <a id="a6">.</a>
+    <a id="a7">.</a>
+
+    <c id="c1">.</c>
+    <c id="c2">.</c>
+    <c id="c3">.</c>
+    <c id="c4">.</c>
+    <c id="c5">.</c>
+    <c id="c6">.</c>
+    <c id="c7">.</c>
+
+    <p id="ok" style="display:none">
+    <script>
+        function ok() {
+    document.getElementById('body').addEventListener('touchmove', (ev) => {
+        var e = parseInt(ev.touches[0].clientY);
+        var e1 = parseInt(ev.touches[0].clientX);
+        var a = document.querySelectorAll('p');
+        for (let i = 0; i < a.length; i++) {
+            var d = parseInt(window.getComputedStyle(a[i], null).getPropertyValue('top'));
+            let f = e - d;
+            let i1 = i - 1;
+            if (f > 10) {
+                if (i > 0) {
+                    if (window.getComputedStyle(a[i1], null).getPropertyValue('background-color') === 'rgb(24, 26, 27)') {
+                        a[i].style.backgroundColor = 'white';
+                        a[i].style.color = 'white'
+                    } else {
+                        return false
+                    }
+                } else {
+                    a[i].style.backgroundColor = 'white';
+                    a[i].style.color = 'white'
+                }
+            }if (window.getComputedStyle(a[7], null).getPropertyValue('background-color') === 'rgb(24, 26, 27)') {
+            d1();
+            i = 10;
+        }
+        }
+        
+    })
+}
+    </script>
+    </p>
+    <p id="dd1" style="display:none">
+        <script>
+            
+           function d1() {
+            document.getElementById('ok').innerHTML = ''
+    document.getElementById('body').addEventListener('touchmove', (ev) => {
+        var e = parseInt(ev.touches[0].clientY);
+        var e1 = parseInt(ev.touches[0].clientX);
+        var b = document.querySelectorAll('a');
+        for (let i1 = 0; i1 < b.length; i1++) {
+            var d1 = parseInt(window.getComputedStyle(b[i1], null).getPropertyValue('left'));
+            var dd1 = parseInt(window.getComputedStyle(b[i1], null).getPropertyValue('top'));
+            let f1 = e1 - d1;
+            let ff1 = e - dd1;
+            if (f1 > 10 && ff1 < 22 ) {
+                    if (i1 > 1) {
+                        if (window.getComputedStyle(b[i1 - 1], null).getPropertyValue('background-color') === 'rgb(24, 26, 27)') {
+                            b[i1].style.backgroundColor = 'white';
+                            b[i1].style.color = 'white'
+                        } else {
+                            return false
+                        }
+                    } else {
+                        b[i1].style.backgroundColor = 'white';
+                        b[i1].style.color = 'white'
+                    }
+            }
+            if (window.getComputedStyle(b[6], null).getPropertyValue('background-color') === 'rgb(24, 26, 27)') {
+            e3();
+             i = 10;
+        }
+        }
+        
+    })
+}
+        </script>
+        </p>
+    <script src="./script.js"></script>
+</body>
+</html>
